@@ -1,0 +1,25 @@
+{% extends 'writers/writers.html' %}
+
+{% load static %}
+{% block title %}{{ writer.name }}{% endblock %}
+{% block header %}{{ writer.name }}{% endblock %}
+
+{% block content %}
+    <img src="{% static writer.image %}" alt="{{ writer.name }}" width="200">
+    <p><strong>Год рождения:</strong> {{ writer.year }}</p>
+    <p><strong>Место рождения:</strong> {{ writer.place_birth }}</p>
+
+    <h2>Биография</h2>
+    <p>{{ writer.bio }}</p>
+
+    <h2>Книги</h2>
+    <ul>
+        {% for book_key, book in writer.books.items|slice:":3" %}
+            <li>
+                <a href="{% url 'books' name=key book=book_key %}">{{ book.title }} ({{ book.year }})</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+

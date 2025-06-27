@@ -1,0 +1,31 @@
+body
+{
+    background-image: url("../images/Poet.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;                      
+    min-height: 100vh;   
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.writer-list {
+    display: flex;
+    justify-content: center; /* или space-between / flex-start */
+    gap: 40px; /* расстояние между карточками */
+    flex-wrap: wrap; /* перенос на новую строку, если не помещается */
+    list-style: none; /* убрать маркеры у <ul> */
+    padding: 0;
+}
+
+.writer-list li {
+    text-align: center;
+}
+
+a
+{
+    color: white;
+}

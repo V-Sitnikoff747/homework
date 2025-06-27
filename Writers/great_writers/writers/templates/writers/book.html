@@ -1,0 +1,11 @@
+{% extends 'writers/books.html' %}
+
+{% block title %}{{ book.title }}{% endblock %}
+
+{% block header %}{{ book.title }}{% endblock %}
+
+{% block content %}
+    <p><strong>Автор:</strong> {{ writer.name }}</p>
+    <p><strong>Год выпуска:</strong> {{ book.year }}</p>
+    <a href="{% url 'writer_detail' name=key %}">Назад к {{ writer.name }}</a>
+{% endblock %}

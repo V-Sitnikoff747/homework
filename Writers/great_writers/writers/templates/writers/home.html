@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/main_style.css' %}">
+    <title>Главная</title>
+</head>
+<body>
+    <div><h1>Главная страница</h1></div>
+    <div> <p>Добро пожаловать на сайт о великих писателях!</p></div>
+    <div>
+    <ul class="writer-list" >
+    {% for key, writer in writers.items %}
+        <li>
+            <a href="{% url 'writer_detail' name=key %}">
+                <img src="{% static writer.image %}" alt="{{ writer.name }}" width="150"><br>
+                {{ writer.name }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+    </div>
+</body>
+</html>
+
+

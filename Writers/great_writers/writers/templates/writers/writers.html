@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/writerStile.css' %}">
+    <title>{% block title %}Информация о писателе{% endblock %}</title>
+</head>
+<body>
+    <h1>{% block header %}Информация о писателе{% endblock %}</h1>
+
+    {% block content %}
+    <!-- Здесь будет информация о писателе из writer.html -->
+    {%endblock %}
+
+    <a href="{% url 'home' %}">На главную</a>
+</body>
+</html>

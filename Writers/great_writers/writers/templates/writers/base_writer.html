@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ writer.name }}</title>
+</head>
+<body>
+    <h1>{{ writer.name }}</h1>
+    <img src="{% static 'images/'|add:writer.image %}" width="300" alt="{{ writer.name }}">
+
+    <p><strong>Дата рождения:</strong> {{ writer.year }}</p>
+    <p><strong>Место рождения:</strong> {{ writer.place_birth }}</p>
+
+    <h2>Биография</h2>
+    <p>{{ writer.bio|linebreaks }}</p>
+
+    <h2>Книги:</h2>
+    <ul>
+        {% for book_slug, book in writer.books.items %}
+            <li><a href="{% url 'book_detail' key book_slug %}">{{ book.title }}</a> ({{ book.year }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
