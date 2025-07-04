@@ -1,0 +1,13 @@
+{% extends "restaurants/base_add_restaurant.html" %}
+{% block title %}Форма ресторана{% endblock %}
+
+{% block content %}
+<div class="form-container">
+<h1>{{ form.instance.pk|yesno:"Изменить ресторан,Добавить ресторан" }}</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Сохранить</button>
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "restaurants/base_search.html" %}
+{% block content %}
+<h1>Поиск ресторанов</h1>
+<form method="get" class="form-container">
+    <input type="text" name="q" placeholder="Введите специализацию" value="{{ query }}">
+    <button type="submit">Поиск</button>
+</form>
+
+<ul>
+    {% for restaurant in results %}
+        <li>{{ restaurant.name }} - {{ restaurant.specialization }}</li>
+    {% empty %}
+        <li>Ничего не найдено</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

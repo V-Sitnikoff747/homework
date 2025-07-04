@@ -1,0 +1,32 @@
+{% extends "restaurants/base_list.html" %}
+
+{% block content %}
+<div class="title-wrapper" style="text-align: center; color: white; margin-bottom: 20px;">
+    <h1>Рестораны города</h1>
+    <a href="{% url 'add_restaurant' %}" style="color: white; text-decoration: underline; display: block; margin: 10px 0;">
+        Добавить ресторан
+    </a>
+    <a href="{% url 'search_restaurants' %}" style="color: white; text-decoration: underline;">
+        Поиск по специализации
+    </a>
+</div>
+
+<ul style="color: white;">
+    {% if restaurants %}
+        {% for restaurant in restaurants %}
+            <li>
+                <strong>{{ restaurant.name }}</strong> - {{ restaurant.specialization }}
+                <a href="{% url 'edit_restaurant' restaurant.pk %}" style="color: white; text-decoration: underline; margin-left: 10px;">
+                    Редактировать
+                </a>
+                <a href="{% url 'delete_restaurant' restaurant.pk %}" style="color: white; text-decoration: underline; margin-left: 10px;">
+                    Удалить
+                </a>
+            </li>
+        {% endfor %}
+    {% else %}
+        <li>Рестораны не найдены.</li>
+    {% endif %}
+</ul>
+{% endblock %}
+

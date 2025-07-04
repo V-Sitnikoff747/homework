@@ -1,0 +1,50 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    align-items: flex-start; 
+    flex-direction: column;
+    background-image: url("../images/Katrin.jpg");
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+}
+.title-wrapper {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+     font-size: 30px;
+}
+
+.page-title {
+    font-size: 32px;
+    margin: 0;
+}
+
+
+.content-wrapper {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 20px;
+    max-width: 300px;
+    font-size: 15px;
+}
+
+.content-wrapper a {
+    margin: 10px 0;
+    color: white;
+    text-decoration: underline;
+}
+
+.content-wrapper ul {
+    padding-left: 0;
+    list-style-position: inside;
+    color: white;
+}
