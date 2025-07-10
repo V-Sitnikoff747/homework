@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Список продуктов</title>
+    <link rel="stylesheet" href="{% static '/css/products.css' %}">
+</head>
+<body>
+    <h1>Список продуктов</h1>
+
+    <ul>
+        {% for product in products %}
+            <li>{{ product.name }} — {{ product.price }} руб.</li>
+        {% empty %}
+            <li>Продукты не найдены.</li>
+        {% endfor %}
+    </ul>
+<div class="vertical-buttons">
+    <a href="{% url 'add_product'%}" class="nav-button">Добавить продукт</a>
+    <a href="{% url 'index' %}" class="nav-button">На домашнюю страницу</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <title>Добавить покупателя</title>
+    <link rel="stylesheet" href="{% static '/css/customer_add.css' %}">
+</head>
+<body>
+    <div>
+    <h1>Добавить нового покупателя</h1>
+<div class="form-container">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="button">Сохранить</button>
+    </form>
+    <p><a href="{% url 'customer_list' %}" class="button">Вернуться к списку покупателей</a></p>
+</div>
+</body>
+</html>

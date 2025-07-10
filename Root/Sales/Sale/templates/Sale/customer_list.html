@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Список покупателей</title>
+    <link rel="stylesheet" href="{% static '/css/customer.css' %}">
+</head>
+<body>
+    <h2>Список покупателей</h2>
+    <ul>
+      {% for customer in customers %}
+        <li>{{ customer.first_name }} {{ customer.last_name }} — {{ customer.email }}</li>
+      {% endfor %}
+    </ul>
+    <div class="vertical-buttons">
+    <a href="{% url 'add_customer' %}" class="nav-button">Добавить покупателя</a>
+    <a href="{% url 'index' %}" class="nav-button">На домашнюю страницу</a>
+    </div>
+</body>
+</html>
+

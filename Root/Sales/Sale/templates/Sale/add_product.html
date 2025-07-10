@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить продукт</title>
+    <link rel="stylesheet" href="{% static '/css/products_add.css' %}">
+</head>
+<body>
+    <div>
+    <h1>Добавить продукт</h1>
+    </div>
+<div class="form-container">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="button">Сохранить</button>
+    </form>
+     <a href="{% url 'products' %}"class="button">Назад к списку продуктов</a>
+</div>
+    
+</body>
+</html>
